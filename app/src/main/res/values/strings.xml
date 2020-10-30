@@ -1,0 +1,20 @@
+<resources>
+    <!-- Title for the application. [CHAR LIMIT=12] -->
+    <string name="app_name">Egypt Tour Guide</string>
+
+    <!-- Category name for alexandria [CHAR LIMIT=20] -->
+    <string name="alexandria">Alexandria</string>
+
+    <!-- Category name for cairo [CHAR LIMIT=20] -->
+    <string name="cairo">Cairo</string>
+
+    <!-- Category name for siwa [CHAR LIMIT=20] -->
+    <string name="siwa">Siwa</string>
+
+    <!-- Category name for luxor [CHAR LIMIT=20] -->
+    <string name="luxor">Luxor</string>
+
+    <!-- Category name for aswan [CHAR LIMIT=20] -->
+    <string name="aswan">Aswan</string>
+
+</resources>
