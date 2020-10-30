@@ -32,8 +32,6 @@ public class SiwaAdapter extends ArrayAdapter<Siwa> {
         TextView cmTitle = lv.findViewById (R.id.cmTitle);
 
         Picasso.get ().load (getItem (position).picture).placeholder (R.drawable.placeholder).into (cmPic);
-//        Glide.with (getContext ()).load (getItem (position).picture).into (cmPic);
-
         cmTitle.setText (getItem (position).title);
 
         return lv;

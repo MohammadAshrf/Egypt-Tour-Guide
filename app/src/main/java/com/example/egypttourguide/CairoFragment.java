@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import java.util.List;
+import java.util.Objects;
 
 public class CairoFragment extends Fragment {
     CairoDAO cairoDao;
@@ -42,7 +43,7 @@ public class CairoFragment extends Fragment {
         cairoDao = PlacesDatabase.getInstance (getActivity ()).cairoDAO ();
         List<Cairo> places = cairoDao.selectCairo ();
 
-        CairoAdapter adapter = new CairoAdapter ((getActivity ()), places);
+        CairoAdapter adapter = new CairoAdapter ((Objects.requireNonNull (getActivity ())), places);
         ListView lv = rootView.findViewById (R.id.lv);
         lv.setAdapter (adapter);
 
@@ -61,13 +62,6 @@ public class CairoFragment extends Fragment {
         super.onResume ();
         wv.resumeTimers ();
         wv.onResume ();
-    }
-
-    @Override
-    public void onDestroy() {
-        wv.destroy ();
-        wv = null;
-        super.onDestroy ();
     }
 
     private static class MyWebViewClient extends WebViewClient {

@@ -17,4 +17,6 @@
     <!-- Category name for aswan [CHAR LIMIT=20] -->
     <string name="aswan">Aswan</string>
 
+    <string name="todo">TODO</string>
+
 </resources>

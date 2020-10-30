@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import java.util.List;
+import java.util.Objects;
 
 public class AswanFragment extends Fragment {
     AswanDAO aswanDao;
@@ -41,7 +42,7 @@ public class AswanFragment extends Fragment {
         aswanDao = PlacesDatabase.getInstance (getActivity ()).aswanDAO ();
         List<Aswan> places = aswanDao.selectAswan ();
 
-        AswanAdapter adapter = new AswanAdapter ((getActivity ()), places);
+        AswanAdapter adapter = new AswanAdapter ((Objects.requireNonNull (getActivity ())), places);
         ListView lv = rootView.findViewById (R.id.lv);
 
         lv.setAdapter (adapter);
@@ -61,13 +62,6 @@ public class AswanFragment extends Fragment {
         super.onResume ();
         wv.resumeTimers ();
         wv.onResume ();
-    }
-
-    @Override
-    public void onDestroy() {
-        wv.destroy ();
-        wv = null;
-        super.onDestroy ();
     }
 
     private static class MyWebViewClient extends WebViewClient {

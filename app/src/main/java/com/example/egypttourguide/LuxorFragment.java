@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import java.util.List;
+import java.util.Objects;
 
 public class LuxorFragment extends Fragment {
     LuxorDAO luxorDao;
@@ -41,7 +42,7 @@ public class LuxorFragment extends Fragment {
         luxorDao = PlacesDatabase.getInstance (getActivity ()).luxorDAO ();
         List<Luxor> places = luxorDao.selectLuxor ();
 
-        LuxorAdapter adapter = new LuxorAdapter ((getActivity ()), places);
+        LuxorAdapter adapter = new LuxorAdapter ((Objects.requireNonNull (getActivity ())), places);
         ListView lv = rootView.findViewById (R.id.lv);
 
         lv.setAdapter (adapter);
@@ -61,13 +62,6 @@ public class LuxorFragment extends Fragment {
         super.onResume ();
         wv.resumeTimers ();
         wv.onResume ();
-    }
-
-    @Override
-    public void onDestroy() {
-        wv.destroy ();
-        wv = null;
-        super.onDestroy ();
     }
 
     private static class MyWebViewClient extends WebViewClient {

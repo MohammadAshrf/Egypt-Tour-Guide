@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import java.util.List;
+import java.util.Objects;
 
 public class SiwaFragment extends Fragment {
     SiwaDAO siwaDao;
@@ -41,7 +42,7 @@ public class SiwaFragment extends Fragment {
         siwaDao = PlacesDatabase.getInstance (getActivity ()).siwaDAO ();
         List<Siwa> places = siwaDao.selectSiwa ();
 
-        SiwaAdapter adapter = new SiwaAdapter ((getActivity ()), places);
+        SiwaAdapter adapter = new SiwaAdapter ((Objects.requireNonNull (getActivity ())), places);
         ListView lv = rootView.findViewById (R.id.lv);
 
         lv.setAdapter (adapter);
@@ -61,13 +62,6 @@ public class SiwaFragment extends Fragment {
         super.onResume ();
         wv.resumeTimers ();
         wv.onResume ();
-    }
-
-    @Override
-    public void onDestroy() {
-        wv.destroy ();
-        wv = null;
-        super.onDestroy ();
     }
 
     private static class MyWebViewClient extends WebViewClient {

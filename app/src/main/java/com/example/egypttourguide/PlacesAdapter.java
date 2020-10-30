@@ -13,10 +13,10 @@ public class PlacesAdapter extends FragmentPagerAdapter {
     /**
      * Context of the app
      */
-    Context mContext;
+    final Context mContext;
 
     public PlacesAdapter(Context context, @NonNull FragmentManager fm) {
-        super (fm,BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        super (fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         mContext = context;
     }
 

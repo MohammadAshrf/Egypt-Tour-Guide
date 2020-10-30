@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import java.util.List;
+import java.util.Objects;
 
 
 public class AlexandriaFragment extends Fragment {
@@ -44,18 +45,12 @@ public class AlexandriaFragment extends Fragment {
         alexandriaDAO = PlacesDatabase.getInstance (getActivity ()).alexandriaDAO ();
         List<Alexandria> places = alexandriaDAO.selectAlexandria ();
 
-        AlexandriaAdapter adapter = new AlexandriaAdapter ((getActivity ()), places);
+        AlexandriaAdapter adapter = new AlexandriaAdapter ((Objects.requireNonNull (getActivity ())), places);
         ListView lv = view.findViewById (R.id.lv);
         lv.setAdapter (adapter);
-//        onClick ();
 
         return view;
     }
-//I will modify it.
-//    private void onClick() {
-//        lv.setOnItemClickListener ((parent, view, position, id) ->
-//                Toast.makeText (getActivity (), "id is " + lv.getSelectedItemPosition () + "\n" + position + "\n" + id, Toast.LENGTH_LONG).show ());
-//    }
 
     @Override
     public void onPause() {
@@ -69,13 +64,6 @@ public class AlexandriaFragment extends Fragment {
         super.onResume ();
         wv.resumeTimers ();
         wv.onResume ();
-    }
-
-    @Override
-    public void onDestroy() {
-        wv.destroy ();
-        wv = null;
-        super.onDestroy ();
     }
 
     private static class MyWebViewClient extends WebViewClient {
