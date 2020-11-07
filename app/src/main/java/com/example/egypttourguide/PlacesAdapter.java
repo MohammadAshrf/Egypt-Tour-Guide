@@ -8,6 +8,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.example.egypttourguide.alexandria.AlexandriaFragment;
+import com.example.egypttourguide.aswan.AswanFragment;
+import com.example.egypttourguide.cairo.CairoFragment;
+import com.example.egypttourguide.luxor.LuxorFragment;
+import com.example.egypttourguide.siwa.SiwaFragment;
+
 public class PlacesAdapter extends FragmentPagerAdapter {
 
     /**

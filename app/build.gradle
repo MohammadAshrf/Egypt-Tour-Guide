@@ -44,4 +44,8 @@ dependencies {
 
     //To get images from internet
     implementation 'com.squareup.picasso:picasso:2.71828'
+    //progress bar
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+    //Slider
+    implementation 'com.synnapps:carouselview:0.1.5'
 }

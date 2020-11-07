@@ -17,6 +17,8 @@
     <!-- Category name for aswan [CHAR LIMIT=20] -->
     <string name="aswan">Aswan</string>
 
-    <string name="todo">TODO</string>
-
+    <string name="see_on_map">See on map:</string>
+    <string name="favorite">Favorite?</string>
+    <string name="come_to_egypt_and_visit_your_favourite_places">Come to Egypt and visit your favourite places !</string>
+    <string name="favorites">Favorites</string>
 </resources>

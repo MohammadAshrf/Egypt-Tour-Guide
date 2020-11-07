@@ -8,5 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="lv_background">#7E6F6F</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="detail_background">#292323</color>
+    <color name="fav_background">#4C4C4C</color>
+
 
 </resources>

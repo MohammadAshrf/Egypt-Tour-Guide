@@ -6,7 +6,18 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {Alexandria.class, Cairo.class, Siwa.class, Luxor.class, Aswan.class}, version = 1)
+import com.example.egypttourguide.alexandria.Alexandria;
+import com.example.egypttourguide.alexandria.AlexandriaDAO;
+import com.example.egypttourguide.aswan.Aswan;
+import com.example.egypttourguide.aswan.AswanDAO;
+import com.example.egypttourguide.cairo.Cairo;
+import com.example.egypttourguide.cairo.CairoDAO;
+import com.example.egypttourguide.luxor.Luxor;
+import com.example.egypttourguide.luxor.LuxorDAO;
+import com.example.egypttourguide.siwa.Siwa;
+import com.example.egypttourguide.siwa.SiwaDAO;
+
+@Database(entities = {Alexandria.class, Cairo.class, Siwa.class, Luxor.class, Aswan.class, Favourite.class}, version = 2)
 public abstract class PlacesDatabase extends RoomDatabase {
 
     private static PlacesDatabase ourInstance;
@@ -33,4 +44,7 @@ public abstract class PlacesDatabase extends RoomDatabase {
 
     public abstract AswanDAO aswanDAO();
 
+    public abstract FavouriteDAO favouriteDAO();
+
+//    public abstract PictureDAO pictureDAO();
 }
