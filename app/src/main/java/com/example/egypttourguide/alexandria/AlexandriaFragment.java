@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.AdapterView;
@@ -47,10 +48,10 @@ public class AlexandriaFragment extends Fragment {
 
         wv.getSettings ().setJavaScriptEnabled (true);
         wv.getSettings ().setDomStorageEnabled (true);
-        wv.getSettings ().setAppCacheEnabled (true);
+        wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
         wv.getSettings ().setBuiltInZoomControls (true);
         wv.setWebViewClient (new MyWebViewClient ());
-        wv.loadUrl ("https://www.facebook.com/video/embed?video_id=1706940892719996");
+        wv.loadUrl ("https://www.youtube.com/embed/XPYxYp4UYdg?si=awFjkb0Jc5H6QKnI&amp;start=10s");
 /**
  * progress bar
  */
@@ -62,7 +63,7 @@ public class AlexandriaFragment extends Fragment {
         alexandriaDAO = PlacesDatabase.getInstance (getActivity ()).alexandriaDAO ();
         List<Alexandria> places = alexandriaDAO.selectAlexandria ();
 
-        AlexandriaAdapter adapter = new AlexandriaAdapter ((Objects.requireNonNull (getActivity ())), places);
+        AlexandriaAdapter adapter = new AlexandriaAdapter ((requireActivity()), places);
         lv = view.findViewById (R.id.lv);
         lv.setAdapter (adapter);
 

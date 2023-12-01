@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.AdapterView;
@@ -45,7 +46,7 @@ public class CairoFragment extends Fragment {
 
         wv.getSettings ().setJavaScriptEnabled (true);
         wv.getSettings ().setDomStorageEnabled (true);
-        wv.getSettings ().setAppCacheEnabled (true);
+        wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
         wv.getSettings ().setBuiltInZoomControls (true);
         wv.setWebViewClient (new MyWebViewClient ());
         wv.loadUrl ("https://www.youtube.com/embed/N80gohbobRs");
@@ -60,7 +61,7 @@ public class CairoFragment extends Fragment {
         cairoDao = PlacesDatabase.getInstance (getActivity ()).cairoDAO ();
         List<Cairo> places = cairoDao.selectCairo ();
 
-        CairoAdapter adapter = new CairoAdapter ((Objects.requireNonNull (getActivity ())), places);
+        CairoAdapter adapter = new CairoAdapter ((requireActivity()), places);
         lv = rootView.findViewById (R.id.lv);
         lv.setAdapter (adapter);
 

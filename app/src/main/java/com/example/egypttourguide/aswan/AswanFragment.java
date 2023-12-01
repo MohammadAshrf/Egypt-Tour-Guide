@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.AdapterView;
@@ -44,7 +45,7 @@ public class AswanFragment extends Fragment {
         wv = rootView.findViewById (R.id.webView);
         wv.getSettings ().setJavaScriptEnabled (true);
         wv.getSettings ().setDomStorageEnabled (true);
-        wv.getSettings ().setAppCacheEnabled (true);
+        wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
         wv.getSettings ().setBuiltInZoomControls (true);
         wv.setWebViewClient (new AswanFragment.MyWebViewClient ());
         wv.loadUrl ("https://www.youtube.com/embed/dMm57bBgeg8");
@@ -59,7 +60,7 @@ public class AswanFragment extends Fragment {
         aswanDao = PlacesDatabase.getInstance (getActivity ()).aswanDAO ();
         List<Aswan> places = aswanDao.selectAswan ();
 
-        AswanAdapter adapter = new AswanAdapter ((Objects.requireNonNull (getActivity ())), places);
+        AswanAdapter adapter = new AswanAdapter ((requireActivity()), places);
         lv = rootView.findViewById (R.id.lv);
 
         lv.setAdapter (adapter);

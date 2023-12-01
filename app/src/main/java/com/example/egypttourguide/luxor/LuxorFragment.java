@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.AdapterView;
@@ -44,7 +45,7 @@ public class LuxorFragment extends Fragment {
         wv = rootView.findViewById (R.id.webView);
         wv.getSettings ().setJavaScriptEnabled (true);
         wv.getSettings ().setDomStorageEnabled (true);
-        wv.getSettings ().setAppCacheEnabled (true);
+        wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
         wv.getSettings ().setBuiltInZoomControls (true);
         wv.setWebViewClient (new LuxorFragment.MyWebViewClient ());
         wv.loadUrl ("https://www.youtube.com/embed/dMm57bBgeg8");
@@ -59,7 +60,7 @@ public class LuxorFragment extends Fragment {
         luxorDao = PlacesDatabase.getInstance (getActivity ()).luxorDAO ();
         List<Luxor> places = luxorDao.selectLuxor ();
 
-        LuxorAdapter adapter = new LuxorAdapter ((Objects.requireNonNull (getActivity ())), places);
+        LuxorAdapter adapter = new LuxorAdapter ((requireActivity()), places);
         lv = rootView.findViewById (R.id.lv);
 
         lv.setAdapter (adapter);

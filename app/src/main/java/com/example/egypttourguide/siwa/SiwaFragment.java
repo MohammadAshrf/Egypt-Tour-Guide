@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.AdapterView;
@@ -44,7 +45,7 @@ public class SiwaFragment extends Fragment {
         wv = rootView.findViewById (R.id.webView);
         wv.getSettings ().setJavaScriptEnabled (true);
         wv.getSettings ().setDomStorageEnabled (true);
-        wv.getSettings ().setAppCacheEnabled (true);
+        wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
         wv.getSettings ().setBuiltInZoomControls (true);
         wv.setWebViewClient (new SiwaFragment.MyWebViewClient ());
         wv.loadUrl ("https://www.youtube.com/embed/wNAEzdfPK9g");
@@ -59,7 +60,7 @@ public class SiwaFragment extends Fragment {
         siwaDao = PlacesDatabase.getInstance (getActivity ()).siwaDAO ();
         List<Siwa> places = siwaDao.selectSiwa ();
 
-        SiwaAdapter adapter = new SiwaAdapter ((Objects.requireNonNull (getActivity ())), places);
+        SiwaAdapter adapter = new SiwaAdapter ((requireActivity()), places);
         lv = rootView.findViewById (R.id.lv);
 
         lv.setAdapter (adapter);
