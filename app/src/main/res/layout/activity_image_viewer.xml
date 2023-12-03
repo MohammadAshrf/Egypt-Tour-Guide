@@ -7,7 +7,7 @@
     android:background="@color/black"
     tools:context=".places.ImageViewerActivity">
 
-    <ImageView
+    <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/ivFullPic"
         android:layout_width="0dp"
         android:layout_height="0dp"

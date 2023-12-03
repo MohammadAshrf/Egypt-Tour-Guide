@@ -1,15 +1,13 @@
 package com.example.egypttourguide.places;
 
 import android.os.Bundle;
-import android.widget.ImageView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.egypttourguide.R;
+import com.github.chrisbanes.photoview.PhotoView;
 import com.squareup.picasso.Picasso;
 
 public class ImageViewerActivity extends AppCompatActivity {
-    ImageView ivFullPic;
+    PhotoView ivFullPic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
