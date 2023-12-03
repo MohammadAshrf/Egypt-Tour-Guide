@@ -48,6 +48,9 @@ dependencies {
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
     //Slider
     implementation 'com.synnapps:carouselview:0.1.5'
+    //Zooming photos
+    implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+
 
     def multidex_version = "2.0.1"
     implementation "androidx.multidex:multidex:$multidex_version"
