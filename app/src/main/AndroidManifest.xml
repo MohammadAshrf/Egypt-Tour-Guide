@@ -18,27 +18,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EgyptTourGuide">
-        <activity android:name=".ImageViewerActivity" />
+        <activity android:name=".places.ImageViewerActivity" />
         <activity
-            android:name=".luxor.LuxorDetailActivity"
+            android:name=".places.luxor.LuxorDetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".cairo.CairoDetailActivity"
+            android:name=".places.cairo.CairoDetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".aswan.AswanDetailActivity"
+            android:name=".places.aswan.AswanDetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".siwa.SiwaDetailActivity"
+            android:name=".places.siwa.SiwaDetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".alexandria.AlexandriaDetailActivity"
+            android:name=".places.alexandria.AlexandriaDetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".FavouriteActivity"
+            android:name=".favourite.FavouriteActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainActivity"
+            android:name=".places.PlaceActivity"
             android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
